@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require("uuid");
-const prices = require("../src/utils/pricing");
+const prices = require("../utils/pricing");
 
 let orders = [];
 
