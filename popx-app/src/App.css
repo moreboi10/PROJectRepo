@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f7f8f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* MAIN CONTAINER */
+.screen-container {
+  width: 375px;
+  min-height: 100vh;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================= */
+/* TYPOGRAPHY */
+/* ========================= */
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 28px;
+  line-height: 20px;
+}
+
+/* ========================= */
+/* FLOATING INPUT */
+/* ========================= */
+
+.floating-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-group input {
+  width: 100%;
+  height: 48px;
+  padding: 14px 12px;
+  font-size: 14px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  outline: none;
+  background: transparent;
+  transition: 0.2s;
+}
+
+.floating-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9e9e9e;
+  background: #fff;
+  padding: 0 4px;
+  transition: 0.2s ease;
+}
+
+/* FLOAT EFFECT */
+.floating-group input:focus + label,
+.floating-group input:not(:placeholder-shown) + label {
+  top: -7px;
+  font-size: 11px;
+  color: #6C25FF;
+}
+
+/* INPUT FOCUS */
+.floating-group input:focus {
+  border-color: #6C25FF;
+}
+
+/* ERROR */
+.error-text {
+  font-size: 12px;
+  color: #ff4d4f;
+  margin-top: 4px;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+button {
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* PRIMARY */
+.primary-btn {
+  background: #6C25FF;
+  color: #fff;
+}
+
+/* PRIMARY DISABLED */
+.primary-btn:disabled {
+  background: #D3C9FF;
+  cursor: not-allowed;
+}
+
+/* SECONDARY */
+.secondary-btn {
+  background: #EDE7FF;
+  color: #6C25FF;
+}
+
+/* SECONDARY DISABLED */
+.secondary-btn:disabled {
+  background: #F1F1F1;
+  color: #999;
+}
+
+/* ========================= */
+/* RADIO */
+/* ========================= */
+
+.radio-label {
+  font-size: 14px;
+  margin: 15px 0 10px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.radio-group label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ========================= */
+/* PROFILE */
+/* ========================= */
+
+.profile-image-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: #6C25FF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========================= */
+/* WELCOME PAGE */
+/* ========================= */
+
+.welcome-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.welcome-content {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.welcome-content button:first-of-type {
+  margin-bottom: 10px;
+}
+
+/* ========================= */
+/* POLISH */
+/* ========================= */
+
+input, button {
+  transition: all 0.2s ease;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* MOBILE FALLBACK */
+@media (max-width: 400px) {
+  .screen-container {
+    width: 100%;
+  }
+}
