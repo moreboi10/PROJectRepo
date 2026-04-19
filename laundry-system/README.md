@@ -1,0 +1,167 @@
+# Mini Laundry Order Management System
+
+## Overview
+
+This project is a lightweight Laundry Order Management System designed to handle day-to-day operations of a dry-cleaning store. It supports order creation, status tracking, billing, and basic analytics.
+
+The system was built with an AI-assisted development approach, focusing on fast execution, iterative improvement, and practical problem-solving.
+
+---
+
+## Live Demo
+
+* Frontend:https://pro-ject-repo.vercel.app
+* Backend: https://projectrepo-c6oa.onrender.com
+
+
+---
+
+## Tech Stack
+
+**Backend**
+
+* Node.js
+* Express.js
+* In-memory data storage
+
+**Frontend**
+
+* React (Create React App)
+* Fetch API
+
+**Deployment**
+
+* Backend: Render
+* Frontend: Vercel
+
+---
+
+## Features
+
+### Order Creation
+
+* Capture customer name and phone number
+* Add garments with quantity
+* Automatic price calculation
+* Unique order ID generation
+
+### Order Status Management
+
+* Supported statuses:
+
+  * RECEIVED
+  * PROCESSING
+  * READY
+  * DELIVERED
+* Status can be updated at any stage
+
+### Order Listing
+
+* View all orders
+* Includes customer details, status, and billing
+
+### Dashboard
+
+* Total number of orders
+* Total revenue
+* Order count by status
+
+---
+
+## API Endpoints
+
+| Method | Endpoint             | Description         |
+| ------ | -------------------- | ------------------- |
+| GET    | `/`                  | Health check        |
+| POST   | `/orders`            | Create a new order  |
+| GET    | `/orders`            | Retrieve all orders |
+| GET    | `/orders/dashboard`  | Get dashboard data  |
+| PATCH  | `/orders/:id/status` | Update order status |
+
+---
+
+## Project Structure
+
+```bash
+laundry-system/
+├── laundry-backend/
+│   ├── package.json
+│   └── src/
+│       ├── app.js
+│       ├── controllers/
+│       ├── routes/
+│       ├── services/
+│       ├── models/
+│       └── utils/
+└── laundry-ui/
+    ├── package.json
+    └── src/
+```
+
+---
+
+## Setup Instructions
+
+### Backend
+
+```bash
+cd laundry-system/laundry-backend
+npm install
+npm start
+```
+
+### Frontend
+
+```bash
+cd laundry-system/laundry-ui
+npm install
+npm start
+```
+
+---
+
+## AI Usage
+
+AI tools were used throughout development to accelerate implementation and iteration.
+
+**Tools**
+
+* ChatGPT
+* GitHub Copilot
+
+**Usage**
+
+* Generated initial backend structure (routes, controllers, services)
+* Assisted in building React UI components
+* Helped implement filtering and aggregation logic
+
+**Adjustments Made**
+
+* Corrected API integration issues (port mismatch)
+* Fixed route conflicts in Express
+* Resolved deployment configuration issues
+* Improved module import paths
+
+---
+
+## Tradeoffs
+
+* Used in-memory storage instead of a database to prioritize speed
+* No authentication implemented due to scope constraints
+* UI kept minimal to focus on functionality
+
+---
+
+## Future Improvements
+
+* Add persistent storage (MongoDB or SQL)
+* Introduce authentication and authorization
+* Enhance UI/UX
+* Add advanced filtering and search
+* Include delivery time estimation
+
+---
+
+## Author
+
+Sanket
