@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:3000";
+const API = "https://projectrepo-c6oa.onrender.com";
 
 function App() {
   const [orders, setOrders] = useState([]);
