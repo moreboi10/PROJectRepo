@@ -1,0 +1,215 @@
+/* Base Styles & Hint-of-Green Background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #eef7f1; /* Off-white with a slight hint of green */
+  color: #1a3644; /* Dark teal base text */
+}
+
+/* Layout - Adjusted for Desktop Grid */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: left;
+  color: #1a3644;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Base Section / White Cards with Enhanced Shadows */
+.section {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 24px;
+  margin-bottom: 30px;
+  /* Layered shadow for a realistic pop-up 3D effect */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #1a3644;
+}
+
+/* Dashboard - Deep Teal Theme */
+.dashboard-section {
+  background: #1a3644;
+  color: #ffffff;
+}
+
+.dashboard-section h2 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #a0b2bd;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fc9b42; /* Vibrant orange text */
+}
+
+/* Form Inputs */
+input {
+  margin-bottom: 15px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #e1e7ec;
+  width: calc(100% - 40px);
+  outline: none;
+  background-color: #f9fbfd;
+  font-size: 15px;
+  color: #1a3644;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #fc9b42;
+  box-shadow: 0 0 0 4px rgba(252, 155, 66, 0.1);
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 30px; /* Pill shape */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  background: #fc9b42; /* Vibrant orange */
+  color: white;
+  transition: 0.2s ease;
+  box-shadow: 0 6px 15px rgba(252, 155, 66, 0.25);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252, 155, 66, 0.35);
+}
+
+/* Order Cards - Peach Theme */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background: #fff3e8; /* Soft Peach */
+  padding: 20px;
+  border-radius: 20px;
+  color: #1a3644;
+  border: 1px solid rgba(252, 155, 66, 0.1);
+  /* Added base shadow to cards to make them pop */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Added hover effect so cards lift when interacted with */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.customer-info {
+  margin: 0;
+  font-size: 16px;
+}
+
+.customer-info span {
+  color: #637987;
+  font-size: 14px;
+}
+
+.total-amount {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+/* Action Buttons inside Cards */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  padding: 10px 16px;
+  font-size: 12px;
+  background: #1a3644; /* Dark teal buttons */
+  box-shadow: none;
+}
+
+.action-buttons button:hover {
+  background: #2a5369;
+  transform: translateY(-1px);
+}
+
+/* Status Badges */
+.status {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.status.RECEIVED { color: #637987; }
+.status.PROCESSING { color: #fc9b42; }
+.status.READY { color: #00b4d8; }
+.status.DELIVERED { color: #2a9d8f; }
+
+/* Delete Button Styling */
+.action-buttons .delete-btn {
+  background: #e74c3c; /* A soft red */
+  color: white;
+}
+
+.action-buttons .delete-btn:hover {
+  background: #c0392b; /* Darker red on hover */
+  transform: translateY(-1px);
+}
