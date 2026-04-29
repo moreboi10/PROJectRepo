@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/leads";
+const BASE_URL = "https://your-backend.onrender.com/api/leads";
 
 export const getLeads = async () => {
   const res = await fetch(BASE_URL);
