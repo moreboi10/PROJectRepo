@@ -21,10 +21,18 @@ public class Wallet {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "user_id", nullable = false, unique = true)
+    @Column(
+            name = "user_id",
+            nullable = false,
+            unique = true
+    )
     private UUID userId;
 
-    @Column(nullable = false, precision = 19, scale = 2)
+    @Column(
+            nullable = false,
+            precision = 19,
+            scale = 2
+    )
     private BigDecimal balance;
 
     protected Wallet() {

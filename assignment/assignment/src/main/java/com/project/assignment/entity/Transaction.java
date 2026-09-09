@@ -1,4 +1,4 @@
-package com.project.assignment;
+package com.project.assignment.entity;
 
 import com.project.assignment.enums.TransactionStatus;
 import com.project.assignment.enums.TransactionType;
@@ -24,13 +24,25 @@ public class Transaction {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "transaction_id", nullable = false, updatable = false)
+    @Column(
+            name = "transaction_id",
+            nullable = false,
+            updatable = false
+    )
     private UUID transactionId;
 
-    @Column(name = "user_id", nullable = false, updatable = false)
+    @Column(
+            name = "user_id",
+            nullable = false,
+            updatable = false
+    )
     private UUID userId;
 
-    @Column(nullable = false, precision = 19, scale = 2)
+    @Column(
+            nullable = false,
+            precision = 19,
+            scale = 2
+    )
     private BigDecimal amount;
 
     @Enumerated(EnumType.STRING)
@@ -41,7 +53,10 @@ public class Transaction {
     @Column(nullable = false)
     private TransactionStatus status;
 
-    @Column(nullable = false, updatable = false)
+    @Column(
+            nullable = false,
+            updatable = false
+    )
     private LocalDateTime createdAt;
 
     protected Transaction() {

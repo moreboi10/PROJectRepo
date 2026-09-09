@@ -9,17 +9,20 @@ import java.util.UUID;
 
 public record TransactionRequest(
 
-        @NotNull
+        @NotNull(message = "transactionId is required")
         UUID transactionId,
 
-        @NotNull
+        @NotNull(message = "userId is required")
         UUID userId,
 
-        @NotNull
-        @DecimalMin(value = "0.01")
+        @NotNull(message = "amount is required")
+        @DecimalMin(
+                value = "0.01",
+                message = "amount must be greater than zero"
+        )
         BigDecimal amount,
 
-        @NotNull
+        @NotNull(message = "type is required")
         TransactionType type
 
 ) {

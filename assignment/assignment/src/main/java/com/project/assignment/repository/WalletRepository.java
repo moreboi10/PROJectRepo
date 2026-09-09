@@ -11,11 +11,16 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface WalletRepository extends JpaRepository<Wallet, UUID> {
+
+    Optional<Wallet> findByUserId(UUID userId);
+
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("""
             SELECT w
             FROM Wallet w
             WHERE w.userId = :userId
             """)
-    Optional<Wallet> findByUserIdForUpdate(@Param("userId") UUID userId);
+    Optional<Wallet> findByUserIdForUpdate(
+            @Param("userId") UUID userId
+    );
 }

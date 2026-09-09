@@ -1,6 +1,6 @@
 package com.project.assignment.repository;
 
-import com.project.assignment.Transaction;
+import com.project.assignment.entity.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
