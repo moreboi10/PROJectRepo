@@ -1,0 +1,540 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #10110f;
+  --foreground: #f2f3ed;
+  --lime: #d7ff45;
+  --muted: #85877e;
+  --line: rgba(255, 255, 255, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Space Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  color: var(--background);
+  background: var(--lime);
+}
+
+.hero-section {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(
+      ellipse at 70% 25%,
+      rgba(215, 255, 69, 0.055),
+      transparent 36%
+    ),
+    var(--background);
+}
+
+.hero-stage {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 26px clamp(20px, 5.5vw, 88px) 16px;
+  isolation: isolate;
+}
+
+.hero-stage::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.18) 0.65px,
+    transparent 0.65px
+  );
+  background-size: 5px 5px;
+  content: "";
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.topbar,
+.hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.topbar {
+  min-height: 35px;
+}
+
+.wordmark {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
+
+.wordmark span {
+  color: var(--lime);
+}
+
+.wordmark sup {
+  position: relative;
+  top: -5px;
+  margin-left: 3px;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
+.topbar-note,
+.topbar-link,
+.hero-footer,
+.hero-kicker,
+.hero-index,
+.road-meta,
+.road-caption,
+.section-label,
+.stats-caption,
+.stat-topline,
+.stat-label {
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+}
+
+.topbar-note,
+.hero-footer,
+.road-meta,
+.road-caption,
+.stats-caption {
+  color: var(--muted);
+}
+
+.topbar-link {
+  transition: color 180ms ease;
+}
+
+.topbar-link:hover {
+  color: var(--lime);
+}
+
+.topbar-link span {
+  margin-left: 7px;
+  color: var(--lime);
+}
+
+.hero-content {
+  width: 100%;
+  margin: clamp(28px, 5vh, 58px) 0 20px;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(18px, 3vh, 34px);
+  color: var(--lime);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 14px rgba(215, 255, 69, 0.55);
+}
+
+.blur-kicker {
+  color: var(--lime);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  margin: 0;
+  font-size: clamp(66px, 12.5vw, 180px);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.085em;
+}
+
+.hero-heading > span:first-of-type {
+  color: var(--lime);
+}
+
+.heading-period {
+  color: var(--foreground);
+}
+
+.hero-support {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(24px, 4vh, 42px);
+}
+
+.hero-copy {
+  max-width: 360px;
+  margin: 0;
+  color: #a5a79e;
+  font-size: clamp(13px, 1.15vw, 16px);
+  line-height: 1.75;
+}
+
+.hero-index {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.scroll-arrow {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--lime);
+  font-size: 15px;
+}
+
+.road-section {
+  width: 100%;
+  margin: 4px 0 clamp(22px, 3vh, 34px);
+}
+
+.road-meta,
+.road-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.road-meta {
+  margin-bottom: 11px;
+}
+
+.road-caption {
+  margin-top: 11px;
+}
+
+.road-track {
+  position: relative;
+  height: 82px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  isolation: isolate;
+}
+
+.road-surface {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.008)
+  );
+}
+
+.road-center-line {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.18) 0 24px,
+    transparent 24px 43px
+  );
+}
+
+.road-trail {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--lime);
+  box-shadow:
+    0 0 9px rgba(215, 255, 69, 0.85),
+    0 0 25px rgba(215, 255, 69, 0.3);
+  pointer-events: none;
+}
+
+.car {
+  position: absolute;
+  z-index: 3;
+  top: 5px;
+  left: 0;
+  width: clamp(112px, 14vw, 160px);
+  height: 72px;
+  will-change: transform;
+}
+
+.car-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+}
+
+.road-end-marker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 2px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(215, 255, 69, 0.5);
+}
+
+.road-end-marker span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 12px var(--lime);
+}
+
+.stats-section {
+  margin-top: auto;
+}
+
+.stats-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.section-label {
+  color: var(--lime);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 2.4vw, 34px);
+}
+
+.stat-card {
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.stat-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+}
+
+.stat-cross {
+  color: var(--lime);
+  font-size: 13px;
+}
+
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 15px 0 9px;
+  color: var(--foreground);
+  font-size: clamp(31px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.stat-suffix {
+  color: var(--lime);
+  font-size: 0.5em;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: clamp(7px, 0.75vw, 9px);
+  line-height: 1.5;
+}
+
+.hero-footer {
+  margin-top: 24px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 8px;
+}
+
+.after-section {
+  display: flex;
+  min-height: 75svh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 100px clamp(22px, 12vw, 180px);
+  background: var(--lime);
+  color: var(--background);
+}
+
+.after-section .section-label {
+  color: #424b1e;
+}
+
+.after-section h2 {
+  margin: 28px 0;
+  font-size: clamp(56px, 10vw, 130px);
+  font-weight: 700;
+  line-height: 0.84;
+  letter-spacing: -0.085em;
+}
+
+.after-section h2 span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--background);
+}
+
+.after-section p {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+@media (min-width: 1500px) {
+  .hero-stage {
+    padding-right: max(88px, calc((100vw - 1440px) / 2));
+    padding-left: max(88px, calc((100vw - 1440px) / 2));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-stage {
+    padding: 22px 22px 15px;
+  }
+
+  .topbar-note {
+    display: none;
+  }
+
+  .hero-content {
+    margin: 35px 0 22px;
+  }
+
+  .hero-heading {
+    font-size: clamp(60px, 15.5vw, 115px);
+    line-height: 0.84;
+  }
+
+  .hero-support {
+    align-items: flex-start;
+  }
+
+  .hero-copy {
+    max-width: 280px;
+  }
+
+  .hero-index {
+    font-size: 8px;
+  }
+
+  .road-track {
+    height: 74px;
+  }
+
+  .car {
+    top: 4px;
+    height: 66px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 19px;
+  }
+
+  .stat-value {
+    margin-top: 11px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .hero-footer span:nth-child(2) {
+    display: none;
+  }
+
+  .after-section {
+    min-height: 60svh;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-stage {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .hero-heading {
+    font-size: 15.5vw;
+  }
+
+  .hero-copy {
+    max-width: 225px;
+    font-size: 12px;
+  }
+
+  .hero-index {
+    gap: 7px;
+  }
+
+  .road-meta,
+  .road-caption {
+    font-size: 7px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
