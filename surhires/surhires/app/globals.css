@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-paper font-sans text-navy-900 antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-teal; outline-style: solid; }
+  .on-dark :focus-visible { @apply outline-teal-bright; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
+  .section-pad { @apply py-16 sm:py-24; }
+  .field { @apply w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-base text-navy-900 transition-colors placeholder:text-muted/70 hover:border-navy-700 disabled:cursor-not-allowed disabled:opacity-50; }
+  .field[aria-invalid="true"] { @apply border-red-700; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero-rise { animation: rise 0.7s ease-out both; }
+.hero-rise-delay { animation: rise 0.7s 0.2s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
